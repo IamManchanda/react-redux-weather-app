@@ -36,6 +36,7 @@ module.exports = {
     'prefer-const': 0,
     'global-require': 0,
     'max-len': 0,
+    'class-methods-use-this': 0,
     'react/prop-types': 0,
     'react/jsx-filename-extension': 0,
     'react/jsx-curly-spacing': 0,

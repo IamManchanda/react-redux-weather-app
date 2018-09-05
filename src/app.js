@@ -1,18 +1,21 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { render } from 'react-dom';
 import { Provider as AppProvider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
-import reducers from './reducers';
+import ReduxPromise from 'redux-promise';
 
-const createStoreWithMiddleware = applyMiddleware()(createStore);
+import reducers from './reducers';
+import SearchBar from './containers/search-bar';
+import WeatherList from './containers/weather-list';
+
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
 const appRoot = document.querySelector('#root');
 
 const App = () => (
-  <div className="grid-x grid-margin-x">
-    <div className="cell">
-      Yo
-    </div>
-  </div>
+  <Fragment>
+    <SearchBar />
+    <WeatherList />
+  </Fragment>
 );
 
 render(
