@@ -45,3 +45,18 @@
 .is-anchor {
   cursor: pointer;
 }
+
+.sparklines-chart-container svg {
+  height: 200px;
+  width: 100%;
+}
+
+.google-maps-container{
+  padding-bottom: .625rem;
+  margin-top: 0.625rem;
+}
+
+.google-maps-container .google-map-box {
+  height: 185px;
+  width: 250px;
+}

@@ -42,7 +42,6 @@ module.exports = {
     'react/jsx-curly-spacing': 0,
     'react/no-unused-state': 0,
     'react/jsx-one-expression-per-line': 0,
-    'react/jsx-wrap-multilines': 0,
     'jsx-a11y/label-has-for': 0, // Depreciated
     // Never use these last 3 in a real application... I mean never!
     'no-alert': 0,

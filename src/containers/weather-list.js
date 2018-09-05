@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import { connect } from 'react-redux';
 import SparklinesChart from '../components/sparklines-chart';
+import GoogleMap from '../components/google-map';
 
 class WeatherList extends Component {
   renderWelcome() {
@@ -19,37 +20,36 @@ class WeatherList extends Component {
     if (!currentWeatherData) return null;
     const { city, list } = currentWeatherData;
     const { name } = city;
+    const { lat, lon } = city.coord;
     const getListArray = (item) => list.map(currentWeather => currentWeather.main[item]);
     const tempArray = getListArray('temp');
     const pressureArray = getListArray('pressure');
     const humidityArray = getListArray('humidity');
-    console.log(name, { tempArray, humidityArray, pressureArray });
     return (
       <Fragment key={ name }>
         <tr>
-          <td className="text-center">{ name }</td>
+          <td className="text-center">
+            <GoogleMap lat={ lat } lon={ lon } name={ name } />
+          </td>
           <td className="text-center">
             <SparklinesChart 
-              height={ 90 }
-              width={ 180 }
               dataArray={ tempArray }
               color="#0ea29d"
+              units="K"
             />
           </td>
           <td className="text-center">
             <SparklinesChart 
-              height={ 120 }
-              width={ 180 }
               dataArray={ pressureArray }
               color="#0D355A"
+              units="hPa"
             />
           </td>
           <td className="text-center">
             <SparklinesChart 
-              height={ 120 }
-              width={ 180 }
               dataArray={ humidityArray }
               color="#0ea29d"
+              units="%"
             />
           </td>
         </tr>
@@ -66,9 +66,9 @@ class WeatherList extends Component {
           <thead>
             <tr>
               <th className="text-center">City</th>
-              <th className="text-center">Temperature</th>
-              <th className="text-center">Pressure</th>
-              <th className="text-center">Humidity</th>
+              <th className="text-center">Temperature (K)</th>
+              <th className="text-center">Pressure (hPa)</th>
+              <th className="text-center">Humidity (%)</th>
             </tr>
           </thead>
           <tbody>
