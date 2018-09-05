@@ -62,7 +62,7 @@ class WeatherList extends Component {
     const { weather } = props;
     return (
       <Fragment>
-        <table className="radius bordered shadow">
+        <table className="weather-table radius bordered shadow">
           <thead>
             <tr>
               <th className="text-center">City</th>

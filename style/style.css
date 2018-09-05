@@ -60,3 +60,7 @@
   height: 235px;
   width: 400px;
 }
+
+.weather-table p {
+  margin-bottom: 0;
+}

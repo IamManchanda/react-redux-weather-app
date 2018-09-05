@@ -13,7 +13,7 @@ const appRoot = document.querySelector('#root');
 
 const App = () => (
   <Fragment>
-    <h1 className="text-center">Weather App</h1>
+    <h1 className="text-center">🌤 The Great Indian Weather App</h1>
     <SearchBar />
     <WeatherList />
   </Fragment>
